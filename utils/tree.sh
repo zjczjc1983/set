@@ -1,8 +1,13 @@
 #!/bin/bash
 
-# 给所有脚本增加可执行权限
-function listFiles() {
-  ls /
-}
-
-listFiles
+# 递归列出所有文件名
+for file in `ls $1`;
+do
+	if [ -d "$1/$file" ]; then
+		echo $2$file
+		tree "$1/$file" " $2"
+	else
+		echo "$2$file"
+	fi
+done
+		
