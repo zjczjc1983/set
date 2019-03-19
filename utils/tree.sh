@@ -4,3 +4,5 @@
 function listFiles() {
   ls /
 }
+
+listFiles
